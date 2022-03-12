@@ -6,11 +6,11 @@ with open("README.md", "r", encoding="utf-8", errors="ignore") as fh:
 setuptools.setup(
     name="DisnakeUtils",
     version="1.3.4",
-    author="toxicrecker (forked by raianah)",
-    description="DiscordUtils is a very useful library made to be used with discord.py",
+    author="toxicrecker, raianah",
+    description="DisnakeUtils is a forked library from toxicrecker, made for compatibility purposes in disnake.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://www.github.com/toxicrecker/DiscordUtils",
+    url="https://www.github.com/raianah/DisnakeUtils",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
