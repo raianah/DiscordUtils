@@ -1,5 +1,5 @@
 # Forked for Disnake Compatibility
-This fork is currently in development for compatibility purposes. I will also rename some of the few things for better reading.
+This fork is currently in development for compatibility purposes. I will also rename some of the few things for better reading. Do not use this.
 
 # Future
 For around 6-7 months I've not been working on DiscordUtils due to a few simple reasons i stated earlier, but since danny decided to resume the development of discord.py I will most likely come back to this and rewrite everything from start as soon as my personal life gets sorted out. Thanks for reading, have a nice day.
