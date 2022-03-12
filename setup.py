@@ -4,9 +4,9 @@ with open("README.md", "r", encoding="utf-8", errors="ignore") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="DiscordUtils",
+    name="DiscordUtils for Disnake",
     version="1.3.4",
-    author="toxicrecker",
+    author="toxicrecker (forked by raianah)",
     description="DiscordUtils is a very useful library made to be used with discord.py",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -19,6 +19,6 @@ setuptools.setup(
     ],
     python_requires=">= 3.6",
     include_package_data=True,
-    install_requires=["discord.py"],
-    extras_require={"voice": ["discord.py[voice]", "youtube-dl"]}
+    install_requires=["disnake.py"],
+    extras_require={"voice": ["disnake.py[voice]", "youtube-dl"]}
 )
