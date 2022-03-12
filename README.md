@@ -1,92 +1,87 @@
 # Forked for Disnake Compatibility
-This fork is currently in development for compatibility purposes. I will also rename some of the few things for better reading. Do not use this.
+This fork is currently in development and may be not working as of now. Commits are for update purposes to keep track.
 
 This is what you should expect to this fork:
-- Support for [disnake](https://pypi.org/project/disnake.py/) (obviously)
-- Pagination:
-    - Full usage of buttons instead of reactions (or I can provide both idk)
-    - Overall, pagination improvement from head to toe.
-- Invite Tracker:
-    - TBA
-- Music:
-    - TBA
 
-# Future
-For around 6-7 months I've not been working on DiscordUtils due to a few simple reasons i stated earlier, but since danny decided to resume the development of discord.py I will most likely come back to this and rewrite everything from start as soon as my personal life gets sorted out. Thanks for reading, have a nice day.
+- [x] Support for [disnake](https://pypi.org/project/disnake.py/) (obviously)
+- [x] Slight improvements to pagination.
+- [x] Music rewording, slight improvements.
+- [ ] Full usage of buttons instead of reactions (or I can provide both idk)
+- [ ] Invite Tracker
 
-# Also, read this
-Those of you who tried to message me earlier for support and I never replied, it was just because I stopped working and caring about the library but now you could DM me once again and I will reply to you all.
-
-# DiscordUtils
-A very useful library made to be used in with [disnake](https://pypi.org/project/disnake.py/)
+# DisnakeUtils
+A very useful library made to be used in with [disnake](https://pypi.org/project/disnake/)
 
 # Installation
-For access to Pagination and InviteTracker use:
+
 ```
-pip install DiscordUtils
+pip install git+https://github.com/raianah/DisnakeUtils.git@master
 ```
 
-or, instead use the following for access to Music functions aswell
-```
-pip install DiscordUtils[voice]
-```
-Requires disnake.py[voice] so make sure you have all dependencies of it installed.
+Requires disnake and/or disnake[voice] so make sure you have all dependencies of it installed.
 
 # Example code
 
-### DiscordUtils.Pagination.AutoEmbedPaginator
+### DisnakeUtils.Pagination.AutoEmbedPaginator
 ```python
+from disnake import Embed
+import DisnakeUtils
+
 @bot.command()
 async def paginate(ctx):
-    embed1 = disnake.Embed(color=ctx.author.color).add_field(name="Example", value="Page 1")
-    embed2 = disnake.Embed(color=ctx.author.color).add_field(name="Example", value="Page 2")
-    embed3 = disnake.Embed(color=ctx.author.color).add_field(name="Example", value="Page 3")
-    paginator = DiscordUtils.Pagination.AutoEmbedPaginator(ctx)
+    embed1 = Embed(color=ctx.author.color).add_field(name="Example", value="Page 1")
+    embed2 = Embed(color=ctx.author.color).add_field(name="Example", value="Page 2")
+    embed3 = Embed(color=ctx.author.color).add_field(name="Example", value="Page 3")
+    paginator = DisnakeUtils.Pagination.AutoEmbedPaginator(ctx)
     embeds = [embed1, embed2, embed3]
     await paginator.run(embeds)
 ```
 
-### DiscordUtils.Pagination.CustomEmbedPaginator
+### DisnakeUtils.Pagination.CustomEmbedPaginator
 ```python
+from disnake import Embed
+import DisnakeUtils
+
 @bot.command()
 async def paginate(ctx):
-    embed1 = disnake.Embed(color=ctx.author.color).add_field(name="Example", value="Page 1")
-    embed2 = disnake.Embed(color=ctx.author.color).add_field(name="Example", value="Page 2")
-    embed3 = disnake.Embed(color=ctx.author.color).add_field(name="Example", value="Page 3")
-    paginator = DiscordUtils.Pagination.CustomEmbedPaginator(ctx)
+    embed1 = Embed(color=ctx.author.color).add_field(name="Example", value="Page 1")
+    embed2 = Embed(color=ctx.author.color).add_field(name="Example", value="Page 2")
+    embed3 = Embed(color=ctx.author.color).add_field(name="Example", value="Page 3")
+    paginator = DisnakeUtils.Pagination.CustomEmbedPaginator(ctx)
     paginator.add_reaction('⏮️', "first")
     paginator.add_reaction('⏪', "back")
-    paginator.add_reaction('🔐', "lock")
+    paginator.add_reaction('🔴', "lock")
     paginator.add_reaction('⏩', "next")
     paginator.add_reaction('⏭️', "last")
+    paginator.add_reaction('🗑️', "delete")
     embeds = [embed1, embed2, embed3]
     await paginator.run(embeds)
 ```
 
-### DiscordUtils.InviteTracker
+### DisnakeUtils.InviteTracker
 ```python
 import disnake
 from disnake.ext import commands
-import DiscordUtils
+import DisnakeUtils
 
 intents = disnake.intents.default()
 intents.members = True
 bot = commands.AutoShardedBot(command_prefix=">", intents=intents)
-tracker = DiscordUtils.InviteTracker(bot)
+tracker = DisnakeUtils.InviteTracker(bot)
 
 @bot.event
 async def on_member_join(member):
     inviter = await tracker.fetch_inviter(member) # inviter is the member who invited
 ```
 
-### DiscordUtils.Music
+### DisnakeUtils.Music
 ```python
 import disnake
 from disnake.ext import commands
-import DiscordUtils
+import DisnakeUtils
 
 bot = commands.AutoShardedBot(command_prefix=">")
-music = DiscordUtils.Music()
+music = DisnakeUtils.Music()
 
 @bot.command()
 async def join(ctx):
@@ -177,6 +172,6 @@ For further information please read the docs
 **[Github](https://github.discordutils.gq)**
 
 # Support
-**__Please make sure that you are on the latest version of [DiscordUtils](https://pypi.org/project/DiscordUtils) and [youtube_dl](https://pypi.org/project/youtube_dl) before contacting for support__**
+**__Please make sure that you are on the latest version of [DisnakeUtils](https://github.com/raianah/DisnakeUtils) and [youtube_dl](https://pypi.org/project/youtube_dl) before contacting for support__**
 
-DM/PM `toxic_recker#2795` on Discord for support
+Email me (raianah.twilight@gmail.com) for support.
