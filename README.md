@@ -1,3 +1,6 @@
+# Forked for Disnake Compatibility
+This fork is currently in development for compatibility purposes. I will also rename some of the few things for better reading.
+
 # Future
 For around 6-7 months I've not been working on DiscordUtils due to a few simple reasons i stated earlier, but since danny decided to resume the development of discord.py I will most likely come back to this and rewrite everything from start as soon as my personal life gets sorted out. Thanks for reading, have a nice day.
 
@@ -5,7 +8,7 @@ For around 6-7 months I've not been working on DiscordUtils due to a few simple 
 Those of you who tried to message me earlier for support and I never replied, it was just because I stopped working and caring about the library but now you could DM me once again and I will reply to you all.
 
 # DiscordUtils
-A very useful library made to be used in with [discord.py](https://pypi.org/project/discord.py/)
+A very useful library made to be used in with [disnake](https://pypi.org/project/disnake.py/)
 
 # Installation
 For access to Pagination and InviteTracker use:
@@ -17,7 +20,7 @@ or, instead use the following for access to Music functions aswell
 ```
 pip install DiscordUtils[voice]
 ```
-Requires discord.py[voice] so make sure you have all dependencies of it installed.
+Requires disnake.py[voice] so make sure you have all dependencies of it installed.
 
 # Example code
 
@@ -25,9 +28,9 @@ Requires discord.py[voice] so make sure you have all dependencies of it installe
 ```python
 @bot.command()
 async def paginate(ctx):
-    embed1 = discord.Embed(color=ctx.author.color).add_field(name="Example", value="Page 1")
-    embed2 = discord.Embed(color=ctx.author.color).add_field(name="Example", value="Page 2")
-    embed3 = discord.Embed(color=ctx.author.color).add_field(name="Example", value="Page 3")
+    embed1 = disnake.Embed(color=ctx.author.color).add_field(name="Example", value="Page 1")
+    embed2 = disnake.Embed(color=ctx.author.color).add_field(name="Example", value="Page 2")
+    embed3 = disnake.Embed(color=ctx.author.color).add_field(name="Example", value="Page 3")
     paginator = DiscordUtils.Pagination.AutoEmbedPaginator(ctx)
     embeds = [embed1, embed2, embed3]
     await paginator.run(embeds)
@@ -37,9 +40,9 @@ async def paginate(ctx):
 ```python
 @bot.command()
 async def paginate(ctx):
-    embed1 = discord.Embed(color=ctx.author.color).add_field(name="Example", value="Page 1")
-    embed2 = discord.Embed(color=ctx.author.color).add_field(name="Example", value="Page 2")
-    embed3 = discord.Embed(color=ctx.author.color).add_field(name="Example", value="Page 3")
+    embed1 = disnake.Embed(color=ctx.author.color).add_field(name="Example", value="Page 1")
+    embed2 = disnake.Embed(color=ctx.author.color).add_field(name="Example", value="Page 2")
+    embed3 = disnake.Embed(color=ctx.author.color).add_field(name="Example", value="Page 3")
     paginator = DiscordUtils.Pagination.CustomEmbedPaginator(ctx)
     paginator.add_reaction('⏮️', "first")
     paginator.add_reaction('⏪', "back")
@@ -52,11 +55,11 @@ async def paginate(ctx):
 
 ### DiscordUtils.InviteTracker
 ```python
-import discord
-from discord.ext import commands
+import disnake
+from disnake.ext import commands
 import DiscordUtils
 
-intents = discord.intents.default()
+intents = disnake.intents.default()
 intents.members = True
 bot = commands.AutoShardedBot(command_prefix=">", intents=intents)
 tracker = DiscordUtils.InviteTracker(bot)
@@ -68,8 +71,8 @@ async def on_member_join(member):
 
 ### DiscordUtils.Music
 ```python
-import discord
-from discord.ext import commands
+import disnake
+from disnake.ext import commands
 import DiscordUtils
 
 bot = commands.AutoShardedBot(command_prefix=">")
