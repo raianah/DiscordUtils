@@ -1,6 +1,6 @@
-import discord
+import disnake
 import asyncio
-from discord.ext import commands
+from disnake.ext import commands
 
 class AutoEmbedPaginator(object):
     def __init__(self, ctx, **kwargs):
