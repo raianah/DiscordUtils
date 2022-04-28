@@ -5,7 +5,7 @@ This is what you should expect to this fork:
 
 - [x] Support for [disnake](https://pypi.org/project/disnake.py/) (obviously)
 - [x] Slight improvements to pagination.
-- [x] Music rewording, slight improvements.
+- [x] ~~Music rewording, slight improvements.~~ Please check out [DisnakeWavelink](https://github.com/raianah/DisnakeWavelink).
 - [ ] Full usage of buttons instead of reactions (or I can provide both idk)
 - [ ] Invite Tracker
 
@@ -15,7 +15,7 @@ A very useful library made to be used in with [disnake](https://pypi.org/project
 # Installation
 
 ```
-pip install git+https://github.com/raianah/DisnakeUtils.git@master
+pip install git+https://github.com/raianah/DisnakeUtils
 ```
 
 Requires disnake and/or disnake[voice] so make sure you have all dependencies of it installed.
